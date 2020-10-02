@@ -196,6 +196,22 @@ spec:
             secretKeyRef:
               name: {{ .Release.Name }}-etcd-backup
               key: "accessKeyID"
+{{- else if eq .Values.backup.storageProvider "COS" }}
+        - name: "TENCENTCLOUD_ENDPOINT"
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Release.Name }}-etcd-backup
+              key: "endpoint"
+        - name: "TENCENTCLOUD_ACCESS_KEY_ID"
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Release.Name }}-etcd-backup
+              key: "cosAccessKeyID"
+        - name: "TENCENTCLOUD_ACCESS_KEY_SECRET"
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Release.Name }}-etcd-backup
+              key: "cosAccessKeySecret"
 {{- end }}
         volumeMounts:
         - name: {{ .Release.Name }}-etcd
