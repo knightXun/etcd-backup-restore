@@ -49,6 +49,8 @@ const (
 	SnapstoreProviderSwift = "Swift"
 	// SnapstoreProviderOSS is constant for Alicloud OSS storage provider.
 	SnapstoreProviderOSS = "OSS"
+	// SnapstoreProviderCOS is constant for TencentCloud COS storage provider.
+	SnapstoreProviderCOS = "COS"
 	// SnapshotKindFull is constant for full snapshot kind.
 	SnapshotKindFull = "Full"
 	// SnapshotKindDelta is constant for delta snapshot kind.
